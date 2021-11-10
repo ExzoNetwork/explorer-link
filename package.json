@@ -1,5 +1,5 @@
 {
-  "name": "@metamask/etherscan-link",
+  "name": "@blank/etherscan-link",
   "version": "2.1.1",
   "description": "A library for generating etherscan links.",
   "main": "dist/index.js",
@@ -32,9 +32,9 @@
   "author": "Dan Finlay <dan@danfinlay.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MetaMask/etherscan-link/issues"
+    "url": "https://github.com/Blank-Wallet/etherscan-link/issues"
   },
-  "homepage": "https://github.com/MetaMask/etherscan-link#readme",
+  "homepage": "https://github.com/Blank-Wallet/etherscan-link#readme",
   "devDependencies": {
     "@metamask/eslint-config": "^5.0.0",
     "@typescript-eslint/eslint-plugin": "^4.14.2",
