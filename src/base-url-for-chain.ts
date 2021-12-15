@@ -31,6 +31,9 @@ export = function getBaseUrlForChain(chainId: string): string | null {
     case "0xa4b1": // arbitrum main net
       baseUrl = "arbiscan.io";
       break;
+    case "0xa86a": // avalanche main net
+      baseUrl = "snowtrace.io";
+      break;
     default:
       baseUrl = null;
   }

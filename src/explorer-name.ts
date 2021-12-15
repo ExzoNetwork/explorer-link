@@ -34,6 +34,9 @@ export const getExplorerName = (networkId: string): string | null => {
     case 42161: // arbitrum main net
       explorerName = "Arbiscan";
       break;
+    case 43114: // avalanche main net
+      explorerName = "Snowtrace";
+      break;
     default:
       explorerName = null;
   }

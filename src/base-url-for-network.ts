@@ -34,6 +34,9 @@ export = function getBaseUrlForNetwork(networkId: string): string | null {
     case 42161: // arbitrum main net
       baseUrl = "arbiscan.io";
       break;
+    case 43114: // avalanche main net
+      baseUrl = "snowtrace.io";
+      break;
     default:
       baseUrl = null;
   }
