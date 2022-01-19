@@ -37,6 +37,9 @@ export const getExplorerName = (networkId: string): string | null => {
     case 43114: // avalanche main net
       explorerName = "Snowtrace";
       break;
+    case 80001: // polygon test net mumbai
+      explorerName = "Polygonscan";
+      break;
     default:
       explorerName = null;
   }

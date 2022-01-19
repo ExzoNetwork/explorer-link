@@ -37,6 +37,9 @@ export = function getBaseUrlForNetwork(networkId: string): string | null {
     case 43114: // avalanche main net
       baseUrl = "snowtrace.io";
       break;
+    case 80001: // polygon test net mumbai
+      baseUrl = "https://mumbai.polygonscan.com";
+      break;
     default:
       baseUrl = null;
   }
