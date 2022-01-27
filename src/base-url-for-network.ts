@@ -31,6 +31,9 @@ export = function getBaseUrlForNetwork(networkId: string): string | null {
     case 137: // polygon main net
       baseUrl = "polygonscan.com";
       break;
+    case 250: // fantom main net
+      baseUrl = "ftmscan.com";
+      break;
     case 42161: // arbitrum main net
       baseUrl = "arbiscan.io";
       break;
@@ -38,7 +41,7 @@ export = function getBaseUrlForNetwork(networkId: string): string | null {
       baseUrl = "snowtrace.io";
       break;
     case 80001: // polygon test net mumbai
-      baseUrl = "https://mumbai.polygonscan.com";
+      baseUrl = "mumbai.polygonscan.com";
       break;
     default:
       baseUrl = null;

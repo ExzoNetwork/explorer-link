@@ -28,6 +28,9 @@ export = function getBaseUrlForChain(chainId: string): string | null {
     case "0x89": // polygon main net
       baseUrl = "polygonscan.com";
       break;
+    case "0xFA": // fantom main net
+      baseUrl = "ftmscan.com";
+      break;
     case "0xa4b1": // arbitrum main net
       baseUrl = "arbiscan.io";
       break;
@@ -35,7 +38,7 @@ export = function getBaseUrlForChain(chainId: string): string | null {
       baseUrl = "snowtrace.io";
       break;
     case "0x13881": // polygon test net mumbai
-      baseUrl = "https://mumbai.polygonscan.com";
+      baseUrl = "mumbai.polygonscan.com";
       break;
     default:
       baseUrl = null;

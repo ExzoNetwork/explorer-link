@@ -31,6 +31,9 @@ export const getExplorerName = (networkId: string): string | null => {
     case 137: // polygon main net
       explorerName = "Polygonscan";
       break;
+    case 250: // fantom main net
+      explorerName = "FTMScan";
+      break;
     case 42161: // arbitrum main net
       explorerName = "Arbiscan";
       break;
