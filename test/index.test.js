@@ -195,6 +195,18 @@ describe("account-link", function () {
       );
     });
 
+    it("should handle customNetwork url that ends with / correctly", function () {
+      const result = createCustomAccountLink(
+        "foo",
+        "https://data-seed-prebsc-1-s1.binance.org:8545/"
+      );
+      assert.strictEqual(
+        result,
+        "https://data-seed-prebsc-1-s1.binance.org:8545/address/foo",
+        "should return binance testnet address url"
+      );
+    });
+
     it("should handle no section", function () {
       const result = createCustomAccountLink(
         "foo",
