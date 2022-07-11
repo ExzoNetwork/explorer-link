@@ -48,6 +48,51 @@ describe("account-link", function () {
       const result = createAccountLink("foo", "3234");
       assert.strictEqual(result, "", "should return an empty string");
     });
+
+    it("should handle no section", function () {
+      const result = createAccountLink("foo", "97");
+      assert.strictEqual(
+        result,
+        "https://testnet.bscscan.com/address/foo",
+        "should handle empty section"
+      );
+    });
+
+    it("should handle empty section", function () {
+      const result = createAccountLink("foo", "97", "");
+      assert.strictEqual(
+        result,
+        "https://testnet.bscscan.com/address/foo",
+        "should handle empty section"
+      );
+    });
+
+    it("should handle tokentxns section", function () {
+      const result = createAccountLink("foo", "97", "tokentxns");
+      assert.strictEqual(
+        result,
+        "https://testnet.bscscan.com/address/foo#tokentxns",
+        "should handle tokentxns section"
+      );
+    });
+
+    it("should handle tokentxnsErc721 section", function () {
+      const result = createAccountLink("foo", "97", "tokentxnsErc721");
+      assert.strictEqual(
+        result,
+        "https://testnet.bscscan.com/address/foo#tokentxnsErc721",
+        "should handle tokentxnsErc721 section"
+      );
+    });
+
+    it("should handle tokentxnsErc1155 section", function () {
+      const result = createAccountLink("foo", "97", "tokentxnsErc1155");
+      assert.strictEqual(
+        result,
+        "https://testnet.bscscan.com/address/foo#tokentxnsErc1155",
+        "should handle tokentxnsErc1155 section"
+      );
+    });
   });
 
   describe("by chainId", function () {
@@ -82,18 +127,137 @@ describe("account-link", function () {
       const result = createAccountLinkForChain("foo", "0xca2");
       assert.strictEqual(result, "", "should return an empty string");
     });
+
+    it("should handle no section", function () {
+      const result = createAccountLinkForChain("foo", "0x38");
+      assert.strictEqual(
+        result,
+        "https://bscscan.com/address/foo",
+        "should handle empty section"
+      );
+    });
+
+    it("should handle empty section", function () {
+      const result = createAccountLinkForChain("foo", "0x38", "");
+      assert.strictEqual(
+        result,
+        "https://bscscan.com/address/foo",
+        "should handle empty section"
+      );
+    });
+
+    it("should handle tokentxns section", function () {
+      const result = createAccountLinkForChain("foo", "0x38", "tokentxns");
+      assert.strictEqual(
+        result,
+        "https://bscscan.com/address/foo#tokentxns",
+        "should handle tokentxns section"
+      );
+    });
+
+    it("should handle tokentxnsErc721 section", function () {
+      const result = createAccountLinkForChain(
+        "foo",
+        "0x38",
+        "tokentxnsErc721"
+      );
+      assert.strictEqual(
+        result,
+        "https://bscscan.com/address/foo#tokentxnsErc721",
+        "should handle tokentxnsErc721 section"
+      );
+    });
+
+    it("should handle tokentxnsErc1155 section", function () {
+      const result = createAccountLinkForChain(
+        "foo",
+        "0x38",
+        "tokentxnsErc1155"
+      );
+      assert.strictEqual(
+        result,
+        "https://bscscan.com/address/foo#tokentxnsErc1155",
+        "should handle tokentxnsErc1155 section"
+      );
+    });
   });
 
-  it("should handle customNetwork url correctly", function () {
-    const result = createCustomAccountLink(
-      "foo",
-      "https://data-seed-prebsc-1-s1.binance.org:8545"
-    );
-    assert.strictEqual(
-      result,
-      "https://data-seed-prebsc-1-s1.binance.org:8545/address/foo",
-      "should return binance testnet address url"
-    );
+  describe("custom account link", function () {
+    it("should handle customNetwork url correctly", function () {
+      const result = createCustomAccountLink(
+        "foo",
+        "https://data-seed-prebsc-1-s1.binance.org:8545"
+      );
+      assert.strictEqual(
+        result,
+        "https://data-seed-prebsc-1-s1.binance.org:8545/address/foo",
+        "should return binance testnet address url"
+      );
+    });
+
+    it("should handle no section", function () {
+      const result = createCustomAccountLink(
+        "foo",
+        "https://data-seed-prebsc-1-s1.binance.org:8545"
+      );
+      assert.strictEqual(
+        result,
+        "https://data-seed-prebsc-1-s1.binance.org:8545/address/foo",
+        "should handle empty section"
+      );
+    });
+
+    it("should handle empty section", function () {
+      const result = createCustomAccountLink(
+        "foo",
+        "https://data-seed-prebsc-1-s1.binance.org:8545",
+        ""
+      );
+      assert.strictEqual(
+        result,
+        "https://data-seed-prebsc-1-s1.binance.org:8545/address/foo",
+        "should handle empty section"
+      );
+    });
+
+    it("should handle tokentxns section", function () {
+      const result = createCustomAccountLink(
+        "foo",
+        "https://data-seed-prebsc-1-s1.binance.org:8545",
+        "tokentxns"
+      );
+      assert.strictEqual(
+        result,
+        "https://data-seed-prebsc-1-s1.binance.org:8545/address/foo#tokentxns",
+        "should handle tokentxns section"
+      );
+    });
+
+    it("should handle tokentxnsErc721 section", function () {
+      const result = createCustomAccountLink(
+        "foo",
+        "https://data-seed-prebsc-1-s1.binance.org:8545",
+        "tokentxnsErc721"
+      );
+      assert.strictEqual(
+        result,
+        "https://data-seed-prebsc-1-s1.binance.org:8545/address/foo#tokentxnsErc721",
+        "should handle tokentxnsErc721 section"
+      );
+    });
+
+    it("should handle tokentxnsErc1155 section", function () {
+      const result = createCustomAccountLink(
+        "foo",
+        "https://data-seed-prebsc-1-s1.binance.org:8545",
+        "tokentxnsErc1155"
+      );
+      assert.strictEqual(
+        result,
+        "https://data-seed-prebsc-1-s1.binance.org:8545/address/foo#tokentxnsErc1155",
+        "should handle tokentxnsErc1155 section"
+      );
+    });
   });
 
   describe("getAccountLink", function () {
@@ -103,17 +267,20 @@ describe("account-link", function () {
           expected: "https://etherscan.io/address/0xabcd",
           chainId: "0x1",
           address: "0xabcd",
+          section: "",
         },
         {
           expected: "https://etherscan.io/address/0xabcd",
           networkId: "1",
           address: "0xabcd",
+          section: "",
         },
         {
           expected: "https://ropsten.etherscan.io/address/0xdef0",
           chainId: "0x3",
           address: "0xdef0",
           rpcPrefs: {},
+          section: "",
         },
         {
           // test handling of `blockExplorerUrl` for a custom RPC
@@ -123,6 +290,7 @@ describe("account-link", function () {
           rpcPrefs: {
             blockExplorerUrl: "https://block.explorer",
           },
+          section: "",
         },
         {
           // test handling of trailing `/` in `blockExplorerUrl` for a custom RPC
@@ -132,12 +300,42 @@ describe("account-link", function () {
           rpcPrefs: {
             blockExplorerUrl: "https://another.block.explorer/",
           },
+          section: "",
+        },
+        {
+          expected: "https://another.block.explorer/address/0xdef0#tokentxns",
+          chainId: "0x1f",
+          address: "0xdef0",
+          rpcPrefs: {
+            blockExplorerUrl: "https://another.block.explorer/",
+          },
+          section: "tokentxns",
+        },
+        {
+          expected:
+            "https://another.block.explorer/address/0xdef0#tokentxnsErc721",
+          chainId: "0x1f",
+          address: "0xdef0",
+          rpcPrefs: {
+            blockExplorerUrl: "https://another.block.explorer/",
+          },
+          section: "tokentxnsErc721",
+        },
+        {
+          expected:
+            "https://another.block.explorer/address/0xdef0#tokentxnsErc1155",
+          chainId: "0x1f",
+          address: "0xdef0",
+          rpcPrefs: {
+            blockExplorerUrl: "https://another.block.explorer/",
+          },
+          section: "tokentxnsErc1155",
         },
       ];
       getAccountLinkTests.forEach(
-        ({ expected, address, chainId, rpcPrefs, networkId }) => {
+        ({ expected, address, chainId, rpcPrefs, networkId, section }) => {
           assert.strictEqual(
-            getAccountLink(address, chainId, rpcPrefs, networkId),
+            getAccountLink(address, chainId, rpcPrefs, networkId, section),
             expected
           );
         }
@@ -177,7 +375,7 @@ describe("explorer-link", function () {
     });
 
     it("should have null as a prefix", function () {
-      const result = createExplorerLink("foo", "10");
+      const result = createExplorerLink("foo", "45345");
       assert.strictEqual(result, "", "should return an empty string");
     });
   });
@@ -211,7 +409,7 @@ describe("explorer-link", function () {
     });
 
     it("should have null as a prefix", function () {
-      const result = createExplorerLinkForChain("foo", "0xa");
+      const result = createExplorerLinkForChain("foo", "0xFF");
       assert.strictEqual(result, "", "should return an empty string");
     });
   });

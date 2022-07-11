@@ -1,4 +1,4 @@
-export = function getBaseUrlForChain(chainId: string): string | null {
+export function getBaseUrlForChain(chainId: string): string | null {
   let baseUrl;
   switch (chainId) {
     case "0x1": // main net
@@ -44,4 +44,4 @@ export = function getBaseUrlForChain(chainId: string): string | null {
       baseUrl = null;
   }
   return baseUrl;
-};
+}

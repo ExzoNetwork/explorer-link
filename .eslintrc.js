@@ -1,5 +1,6 @@
 module.exports = {
   root: true,
+  parser: "babel-eslint",
   ignorePatterns: ["!.eslintrc.js", "dist/"],
   overrides: [
     {

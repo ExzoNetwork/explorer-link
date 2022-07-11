@@ -1,4 +1,4 @@
-export = function getBaseUrlForNetwork(networkId: string): string | null {
+export function getBaseUrlForNetwork(networkId: string): string | null {
   // eslint-disable-next-line radix
   const net = parseInt(networkId);
   let baseUrl;
@@ -47,4 +47,4 @@ export = function getBaseUrlForNetwork(networkId: string): string | null {
       baseUrl = null;
   }
   return baseUrl;
-};
+}

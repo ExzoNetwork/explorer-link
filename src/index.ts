@@ -19,7 +19,7 @@ import {
 import { supportedChains } from "./supported-chains";
 import { getExplorerName } from "./explorer-name";
 
-export = {
+export {
   createExplorerLink,
   createCustomExplorerLink,
   createExplorerLinkForChain,

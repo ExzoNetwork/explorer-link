@@ -1,6 +1,6 @@
 import { addPathToUrl } from "./helpers";
-import getBaseUrlForChain from "./base-url-for-chain";
-import getBaseUrlForNetwork from "./base-url-for-network";
+import { getBaseUrlForChain } from "./base-url-for-chain";
+import { getBaseUrlForNetwork } from "./base-url-for-network";
 
 // TODO improve type safety / discriminating unions (this may require a discriminant property)
 interface TransactionInterface {
