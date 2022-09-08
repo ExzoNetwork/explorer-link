@@ -41,7 +41,7 @@
     "@typescript-eslint/parser": "^4.33.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.7.0",
-    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-mocha": "^8.0.0",
     "eslint-plugin-node": "^11.1.0",
     "mocha": "^7.1.1",
