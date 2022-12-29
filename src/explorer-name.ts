@@ -34,6 +34,12 @@ export const getExplorerName = (networkId: string): string | null => {
     case 250: // fantom main net
       explorerName = "FTMScan";
       break;
+    case 1229: // Exzo Network mainnet
+      explorerName = "Exzoscan";
+      break;
+    case 2370: // Exzo Network testnet
+      explorerName = "Exzoscan";
+      break;
     case 42161: // arbitrum main net
       explorerName = "Arbiscan";
       break;
