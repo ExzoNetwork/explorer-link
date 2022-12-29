@@ -31,6 +31,12 @@ export function getBaseUrlForChain(chainId: string): string | null {
     case "0xFA": // fantom main net
       baseUrl = "ftmscan.com";
       break;
+    case "0x1229": // Exzo Network mainnet
+      baseUrl = "exzoscan.io";
+      break;
+    case "0x2370": // Exzo Network testnet
+      baseUrl = "testnet.exzoscan.io";
+      break;
     case "0xa4b1": // arbitrum main net
       baseUrl = "arbiscan.io";
       break;
