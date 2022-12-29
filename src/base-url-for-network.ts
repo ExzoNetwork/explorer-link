@@ -34,6 +34,12 @@ export function getBaseUrlForNetwork(networkId: string): string | null {
     case 250: // fantom main net
       baseUrl = "ftmscan.com";
       break;
+    case 1229: // Exzo Network mainnet
+      baseUrl = "exzoscan.io";
+      break;
+    case 2370: // Exzo Network testnet
+      baseUrl = "testnet.exzoscan.io";
+      break;
     case 42161: // arbitrum main net
       baseUrl = "arbiscan.io";
       break;
